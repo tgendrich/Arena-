@@ -4,24 +4,18 @@ using System.Text;
 
 namespace Arena_
 {
-    public abstract class Entity
+    public  abstract class Entity
     {
         public int HP;
         public int DEF;
         public int attackValue;
         public int damageMod;
         public bool isALive;
-
-
-        public abstract int Attack();
         
 
-        public int Defend()
-        {
-            return DEF + 2;
-        }
+        abstract public int Attack();
 
-        public abstract int SpecialAttack();
-    
+
+        abstract public int SpecialAttack();
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Arena_
 {
-    class PlayerClassWarrior : Entity
+    class PlayerClassWarrior : Entity, Iactions
     {
         int specialAttackCounter { get; set; }
         public PlayerClassWarrior()
@@ -18,7 +18,7 @@ namespace Arena_
     
     }
 
-        public override int Attack()
+        public override int  Attack()
         {
 
             var randomDiceRoll = new Random();
@@ -31,7 +31,7 @@ namespace Arena_
 
         }
 
-        public override int SpecialAttack()
+        public  override int SpecialAttack()
         {
             var randomDiceRoll = new Random();
 

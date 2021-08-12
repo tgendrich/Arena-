@@ -6,24 +6,25 @@ namespace Arena_
 {
     public class EcounterBuilder
     {
-    
-    
-    
-    
-    
-        public void BuildAttempt()
+
+
+
+
+
+        public Entity PlayerBuild()
         {
             
-            Console.WriteLine("Now then; What is your class? Here is what you can pick from!");
             
-            List<string> classes = new List<string>() { "Warrior"};
+            Console.WriteLine("Now then; What is your class? Here is what you can pick from!");
+
+            List<string> classes = new List<string>() { "Warrior" };
             foreach (var item in classes)
             {
-                Console.Write($"{item} " );
+                Console.Write($"{item} ");
 
             }
             Console.WriteLine();
-           
+
             bool switchPick = true;
             do
             {
@@ -32,22 +33,31 @@ namespace Arena_
                 switch (classPick)
                 {
                     case "Warrior":
-                        Console.WriteLine("You Have Picked Warrior!");
-                        PlayerClassWarrior playerClass = new PlayerClassWarrior();
-                        switchPick = false;
-                        break;
+                        {
+                            Console.WriteLine("You Have Picked Warrior!");
+                            return new PlayerClassWarrior();
+                        }
+                        
                     default:
                         Console.WriteLine("wise guy eh?  Pick a real class!");
-                      
                         break;
 
                 }
 
-            } while (switchPick== true);
+            } while (switchPick == true);
+            Console.WriteLine("somethings goin funky");
+            return  new PlayerClassWarrior();
+         
 
+        }
+
+
+
+         public Entity AllyBuild()
+        {
 
             Console.WriteLine("Now, who shall join you in the Arena? Here Are Your Possible Allies!");
-            
+
             List<string> allies = new List<string>() { "Frank" };
             foreach (var item in allies)
             {
@@ -55,8 +65,8 @@ namespace Arena_
 
             }
             Console.WriteLine();
-            switchPick = true;
-            object ally;
+            bool switchPick = true;
+
             do
             {
 
@@ -66,9 +76,9 @@ namespace Arena_
                 {
                     case "Frank":
                         Console.WriteLine("You Have Picked Frank As Your Ally!");
-                        ally = new Frank();
-                        switchPick = false;
-                        break;
+                        return new Frank();
+                       
+                        
                     default:
                         Console.WriteLine("wise guy eh?  Pick Someone Already!");
 
@@ -78,7 +88,17 @@ namespace Arena_
 
 
 
-                } while (switchPick);
+            } while (switchPick);
+            Console.WriteLine("SOmethings goin funky");
+            return new Frank();
+
+        }
+
+
+        public Entity EnemyBuild()
+        {
+
+
 
             Console.WriteLine("Now, Who Shall You Fight!?  Here Are Your Possible Enemies!");
             List<string> enemies = new List<string>() { "Zombie" };
@@ -89,7 +109,7 @@ namespace Arena_
             }
             Console.WriteLine();
 
-            switchPick = true;
+            bool switchPick = true;
             do
             {
 
@@ -99,9 +119,7 @@ namespace Arena_
                 {
                     case "Zombie":
                         Console.WriteLine("You Have Picked The Zombie As Your Enemy!");
-                        ZombieHulk enemy = new ZombieHulk(); 
-                        switchPick = false;
-                        break;
+                        return new ZombieHulk();
                     default:
                         Console.WriteLine("wise guy eh?  Pick Someone to fight Already!");
 
@@ -112,23 +130,25 @@ namespace Arena_
 
 
             } while (switchPick);
+            Console.WriteLine("Somethin goin funky");
+            return new ZombieHulk();
 
-            Console.WriteLine("Now, you May Fight!");
-            object[] arenaArray = new object[3];
-            arenaArray[0] = ally;
-            Console.WriteLine(arenaArray[0].HP);
-        
-        
-        
-        
-        }
-    
-    
-    
-    
-    
-    
-    
-    
+            
+
+            
+        } 
+
+
+
+
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

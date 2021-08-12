@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Arena_
 {
-    public class Frank: Entity
+     public class Frank: Entity
     {
        public int Arrows { get; set; }
        
@@ -38,6 +38,13 @@ namespace Arena_
             Console.WriteLine($"frank has done {damageDice} damage!");
             Arrows -= 3;
             return damageDice;
+        
+        
         }
+        
+            
+
+        
+    
     }
 }
